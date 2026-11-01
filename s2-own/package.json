@@ -1,0 +1,11 @@
+{
+  "name": "securechain-probe-s2-own",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "minimist": "^1.2.5"
+  },
+  "overrides": {
+    "minimist": "1.2.6"
+  }
+}

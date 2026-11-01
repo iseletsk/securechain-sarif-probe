@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "securechain",
+          "version": "0.0.0-probe",
+          "informationUri": "https://tuxcare.com/securechain",
+          "rules": [
+            {
+              "id": "CVE-2021-44906",
+              "name": "CVE-2021-44906",
+              "shortDescription": {
+                "text": "Prototype Pollution in minimist"
+              },
+              "fullDescription": {
+                "text": "Prototype Pollution in minimist"
+              },
+              "help": {
+                "text": "Each alert for this advisory says how to fix it for its own package: the TuxCare build and the command that installs it, or the upstream versions that fix it."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "properties": {
+                "security-severity": "9.8",
+                "tags": [
+                  "security"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2021-44906",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "pkg:npm/minimist@1.2.5 is affected by CVE-2021-44906 (critical): Prototype Pollution in minimist. Upstream fixed this in 1.2.6."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "s2-action/package.json",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "securechainVulnKey": "CVE-2021-44906:pkg:npm/minimist@1.2.5:s2-action/package-lock.json:0"
+          },
+          "properties": {
+            "securechain.ecosystem": "npm",
+            "securechain.fixed": "1.2.6",
+            "securechain.gates": "true",
+            "securechain.ids": "CVE-2021-44906",
+            "securechain.purl": "pkg:npm/minimist@1.2.5",
+            "securechain.rating": "critical",
+            "securechain.score": "9.8",
+            "securechain.severity_source": "cvss3",
+            "securechain.source": "lockfile",
+            "securechain.status": "open",
+            "securechain.version": "1.2.5"
+          }
+        }
+      ]
+    }
+  ]
+}

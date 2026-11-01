@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "securechain",
+          "version": "0.0.0-probe",
+          "informationUri": "https://tuxcare.com/securechain",
+          "rules": [
+            {
+              "id": "securechain-refusal",
+              "name": "securechain-refusal",
+              "shortDescription": {
+                "text": "securechain could not check something: a file it did not read, a version it could not parse, or an advisory source that did not answer. These results do not show that it is safe."
+              },
+              "fullDescription": {
+                "text": "securechain could not check something: a file it did not read, a version it could not parse, or an advisory source that did not answer. These results do not show that it is safe."
+              },
+              "help": {
+                "text": "Read the reason on the alert. `--output json` lists the same item with its file, package and status."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            }
+          ],
+          "notifications": [
+            {
+              "id": "securechain-refusal",
+              "name": "securechain-refusal",
+              "shortDescription": {
+                "text": "securechain could not check something: a file it did not read, a version it could not parse, or an advisory source that did not answer. These results do not show that it is safe."
+              },
+              "fullDescription": {
+                "text": "securechain could not check something: a file it did not read, a version it could not parse, or an advisory source that did not answer. These results do not show that it is safe."
+              },
+              "help": {
+                "text": "Read the reason on the alert. `--output json` lists the same item with its file, package and status."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "securechain-refusal",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "s3-own/requirements.txt: urllib3 1.26.4 could not be checked: no advisory database was asked about it"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "s3-own/requirements.txt",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "909bdab990ecbaa2:1",
+            "securechainRefusalKey": "s3-own/requirements.txt:::722573785bfbf49b"
+          },
+          "properties": {
+            "securechain.file": "s3-own/requirements.txt"
+          }
+        },
+        {
+          "ruleId": "securechain-refusal",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "s3-own/requirements.txt: the pip reader failed: no lockfile names this manifest"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "s3-own/requirements.txt",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0b4ee57e8b643c23:1",
+            "securechainRefusalKey": "s3-own/requirements.txt:::838f0c90c5db1e8e"
+          },
+          "properties": {
+            "securechain.file": "s3-own/requirements.txt"
+          }
+        }
+      ],
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "exitCode": 0,
+          "exitCodeDescription": "ok",
+          "toolExecutionNotifications": [
+            {
+              "descriptor": {
+                "id": "securechain-refusal"
+              },
+              "level": "warning",
+              "message": {
+                "text": "s3-own/requirements.txt: urllib3 1.26.4 could not be checked: no advisory database was asked about it"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "s3-own/requirements.txt",
+                      "uriBaseId": "%SRCROOT%"
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "securechain.file": "s3-own/requirements.txt"
+              }
+            },
+            {
+              "descriptor": {
+                "id": "securechain-refusal"
+              },
+              "level": "warning",
+              "message": {
+                "text": "s3-own/requirements.txt: the pip reader failed: no lockfile names this manifest"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "s3-own/requirements.txt",
+                      "uriBaseId": "%SRCROOT%"
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "securechain.file": "s3-own/requirements.txt"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

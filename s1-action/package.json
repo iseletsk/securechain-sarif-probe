@@ -1,0 +1,12 @@
+{
+  "name": "securechain-probe-s1-action",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "probe-a": "1.0.0",
+    "probe-b": "1.0.0"
+  },
+  "overrides": {
+    "lodash": "4.17.21"
+  }
+}

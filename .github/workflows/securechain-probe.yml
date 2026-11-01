@@ -1,0 +1,36 @@
+# The Q108 probe of securechain-cli (tools/sarif-github-probe/README.md).
+#
+# Each run uploads the six SARIF documents of one round, each under its own
+# category, through the same upload-sarif action a customer uses. The action
+# computes primaryLocationLineHash from the checked-out files, so the files
+# that the documents name must be in this repository.
+name: securechain-probe
+
+on:
+  workflow_dispatch:
+    inputs:
+      round:
+        description: "The round to upload"
+        required: true
+        type: choice
+        options: ["1", "2"]
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        doc: [s1-action, s1-own, s2-action, s2-own, s3-action, s3-own]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: probe/round${{ inputs.round }}/${{ matrix.doc }}.sarif
+          category: securechain-probe-${{ matrix.doc }}
+          wait-for-processing: true

@@ -1,0 +1,32 @@
+# Scenario s4 of the probe of securechain-cli (tools/sarif-github-probe/README.md,
+# "Scenario s4: a project in a subdirectory").
+#
+# The run uploads the two documents of s4, each under its own category,
+# through the same upload-sarif action a customer uses. Both hold one result
+# of the project at s4/svc/api: s4-repository with the path from the
+# repository root (--sarif-locations repository), s4-legacy with the path from
+# the project directory (--sarif-locations legacy), the control.
+name: securechain-probe-s4
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        doc: [s4-legacy, s4-repository]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: probe/s4/${{ matrix.doc }}.sarif
+          category: securechain-probe-${{ matrix.doc }}
+          wait-for-processing: true

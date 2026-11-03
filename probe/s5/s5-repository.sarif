@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "securechain",
+          "version": "0.0.0-probe",
+          "informationUri": "https://tuxcare.com/securechain",
+          "rules": [
+            {
+              "id": "CVE-2022-24999",
+              "name": "CVE-2022-24999",
+              "shortDescription": {
+                "text": "qs vulnerable to Prototype Pollution"
+              },
+              "fullDescription": {
+                "text": "qs vulnerable to Prototype Pollution"
+              },
+              "help": {
+                "text": "Each alert for this advisory says how to fix it for its own package: the TuxCare build and the command that installs it, or the upstream versions that fix it."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "properties": {
+                "security-severity": "7.5",
+                "tags": [
+                  "security"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CVE-2022-24999",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "pkg:npm/qs@6.5.2 is affected by CVE-2022-24999 (high): qs vulnerable to Prototype Pollution. Upstream fixed this in 6.5.3."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "s5/svc%20%232%3F/api%20100%25/package-lock.json",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "securechainVulnKey": "CVE-2022-24999:pkg:npm/qs@6.5.2:package-lock.json:0"
+          },
+          "properties": {
+            "securechain.ecosystem": "npm",
+            "securechain.fixed": "6.5.3",
+            "securechain.gates": "true",
+            "securechain.ids": "CVE-2022-24999",
+            "securechain.purl": "pkg:npm/qs@6.5.2",
+            "securechain.rating": "high",
+            "securechain.score": "7.5",
+            "securechain.severity_source": "cvss3",
+            "securechain.source": "lockfile",
+            "securechain.status": "open",
+            "securechain.version": "6.5.2"
+          }
+        },
+        {
+          "ruleId": "CVE-2022-24999",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "pkg:npm/qs@6.5.2 is affected by CVE-2022-24999 (high): qs vulnerable to Prototype Pollution. Upstream fixed this in 6.5.3."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "s5/svc%20%232%3F/api%20100%25/lock%20%231%3F50%25%20off%2541.json",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "securechainVulnKey": "CVE-2022-24999:pkg:npm/qs@6.5.2:lock #1?50% off%41.json:0"
+          },
+          "properties": {
+            "securechain.ecosystem": "npm",
+            "securechain.fixed": "6.5.3",
+            "securechain.gates": "true",
+            "securechain.ids": "CVE-2022-24999",
+            "securechain.purl": "pkg:npm/qs@6.5.2",
+            "securechain.rating": "high",
+            "securechain.score": "7.5",
+            "securechain.severity_source": "cvss3",
+            "securechain.source": "lockfile",
+            "securechain.status": "open",
+            "securechain.version": "6.5.2"
+          }
+        }
+      ]
+    }
+  ]
+}

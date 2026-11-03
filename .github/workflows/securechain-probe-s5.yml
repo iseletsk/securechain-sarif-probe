@@ -1,0 +1,29 @@
+# Scenario s5 of the probe of securechain-cli (tools/sarif-github-probe/README.md,
+# "Scenario s5: a path that a URI must encode").
+#
+# The run uploads the one document of s5 under its own category, through the
+# same upload-sarif action a customer uses. It holds two results of the
+# project at "s5/svc #2?/api 100%", written by --sarif-locations repository:
+# one on package-lock.json, and one on "lock #1?50% off%41.json". Each
+# artifactLocation.uri is percent-encoded (doc 03, "Each location is a URI,
+# with its path percent-encoded").
+name: securechain-probe-s5
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: probe/s5/s5-repository.sarif
+          category: securechain-probe-s5-repository
+          wait-for-processing: true
